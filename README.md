@@ -26,7 +26,7 @@
 
    In your text input file:
 
-* You can make the first line "date/freq/mode/power/time/station worked/report sent/report rec'd/time off/comments" as a guide and the conversion script will ignore it.
+* You can make the first line "date/freq/mode/power/time/station worked/report sent/report rec'd/operator/comments" as a guide and the conversion script will ignore it.
 * Data can be either upper or lower case, the script converts it all to upper case.
 * Each field should be separated by spaces, except the Comments field which can have spaces, all other fields should have no spaces within them.
 * All 10 fields must be included, but can be "0" if you want to keep it blank
