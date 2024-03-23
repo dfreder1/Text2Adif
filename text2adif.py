@@ -7,7 +7,7 @@ infile = open("textinput.txt", mode = "r")
 # Create the ouptput file
 outfile = open("adiforimport.adi", mode = "w")
 #
-# Heading 
+# Heading - Abandoned the ADX version
 #outfile.write('<?xml version="1.0" encoding="UTF-8"?>')
 #outfile.write("\n")
 #outfile.write('<ADX>')
@@ -26,55 +26,58 @@ while qso:
     qso = infile.readline()
   qsosplit = qso.split()
   #get the band from the freq
-  freq = int(qsosplit[1])
-  if freq in range(135,138,):
+  freq =float(qsosplit[1])
+  print(freq)
+  if freq <= 138:
       band = '2200M'
-  if freq in range(472,479,):
+  elif freq <= 479:
       band = '600M'
-  if freq in range(1800,2000,):
+  elif freq <= 2000:
       band = '160M'
-  if freq in range(3500,4000,):
+  elif freq <= 4000:
       band = '80M'
-  if freq in range(5330, 5410,):
+  elif freq <= 5410:
       band = '60M'
-  if freq in range(7000,7300,):
+  elif freq <= 7300:
       band = '40M'
-  if freq in range(10100,10150,):
+  elif freq <= 10150:
       band = '30M'
-  if freq in range(14000,14350,):
+  elif freq <= 14350:
       band = '20M'
-  if freq in range(18068,18168,):
+  elif freq <= 18168:
       band = '17M'
-  if freq in range(21000,21450,):
+  elif freq <= 21450:
       band = '15M'
-  if freq in range(24890,24990,):
+  elif freq <= 24990:
       band = '12M'
-  if freq in range(28000,29700,):
+  elif freq <= 29700:
       band = '10M'
-  if freq in range(50000,54000,):
+  elif freq <= 54000:
       band = '6M'
-  if freq in range(144000,148000,):
+  elif freq <= 148000:
       band = '2M'
-  if freq in range(222000,225000,):
+  elif freq <= 225000:
       band = '1.25M'
-  if freq in range(420000,450000,):
+  elif freq <= 450000:
       band = '70CM'
-  if freq in range(902000,928000,):
+  elif freq <= 928000:
       band = '33CM'
-  if freq in range(1240000,1300000,):
+  elif freq <= 1300000:
       band = '23CM'
-  if freq in range(2300000,2310000,):
+  elif freq <= 2310000:
       band = '13CM'
-  if freq in range(2390000,2450000,):
+  elif freq <= 2450000:
       band = '13CM'
-  if freq in range(3300000,3500000,):
+  elif freq <= 3500000:
       band = '9CM'
-  if freq in range(5600000, 5925000,):
+  elif freq <= 5925000: 
       band = '6CM'
-  if freq in range(10000000,10500000,):
+  elif freq <= 10500000: 
       band = '3CM'
-  if freq in range(24000000,24250000,):
+  else: 
+      #freq <= 24250000
       band = '1.25CM'
+  print(band)
   #pre-process the comment line
   comment = str(qsosplit[9:]).replace(',','')
   comment = comment.replace('[','')
